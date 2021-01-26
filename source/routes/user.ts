@@ -4,10 +4,12 @@ import extractJWT from '../middleware/extractJWT';
 
 const router = express.Router();
 
-
 router.get('/validate', controller.validateToken);
 
+// Register route
 router.post('/register', controller.register);
+
+// Verify email route
 
 router.post('/login', controller.login);
 
