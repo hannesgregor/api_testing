@@ -3,15 +3,12 @@ const getTimeStamp = (): string => {
 };
 
 const info = (namespace: string, message: string, object?: any) => {
-    if (object)
-    {
+    if (object) {
         console.log(`[${getTimeStamp()}] [INFO] [${namespace}] ${message}`, object);
+    } else {
+        console.log(`[${getTimeStamp()}] [INFO] [${namespace}] ${message}`);
     }
-    else
-    {
-       console.log(`[${getTimeStamp()}] [INFO] [${namespace}] ${message}`); 
-    }
-}
+};
 const warn = (namespace: string, message: string, object?: any) => {
     if (object) {
         console.warn(`[${getTimeStamp()}] [WARN] [${namespace}] ${message}`, object);

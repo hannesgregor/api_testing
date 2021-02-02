@@ -8,7 +8,7 @@ const params = {
     database: config.mysql.database
 };
 
-const Connect = async () => 
+const Connect = async () =>
     new Promise<mysql.Connection>((resolve, reject) => {
         const connection = mysql.createConnection(params);
 

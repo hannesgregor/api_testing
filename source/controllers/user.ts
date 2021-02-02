@@ -26,7 +26,7 @@ const register = (req: Request, res: Response, next: NextFunction) => {
                 error: hashError
             });
         }
-        let query = `INSERT INTO users (email, password, firstName, lastName) VALUES ("${email}", "${hash}", "${firstName}", "${lastName}")`;
+        let query = `INSERT INTO user (email, password, firstName, lastName, role) VALUES ("${email}", "${hash}", "${firstName}", "${lastName}", "USER")`;
 
         Connect()
             .then((connection) => {
@@ -56,7 +56,7 @@ const register = (req: Request, res: Response, next: NextFunction) => {
 
 const login = (req: Request, res: Response, next: NextFunction) => {
     let { email, password } = req.body;
-    let query = `SELECT * FROM users WHERE email = '${email}'`;
+    let query = `SELECT * FROM user WHERE email = '${email}'`;
 
     Connect()
         .then((connection) => {
@@ -103,7 +103,7 @@ const login = (req: Request, res: Response, next: NextFunction) => {
 };
 
 const getAllUsers = (req: Request, res: Response, next: NextFunction) => {
-    let query = `SELECT id, email  from users`;
+    let query = `SELECT id, email  from user`;
 
     Connect()
         .then((connection) => {

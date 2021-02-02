@@ -22,7 +22,7 @@ router.use((req, res, next) => {
 });
 
 // parse the request
-router.use(express.urlencoded({ extended: false}));
+router.use(express.urlencoded({ extended: false }));
 router.use(express.json());
 
 // rules of our API
